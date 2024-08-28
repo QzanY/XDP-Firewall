@@ -4,7 +4,6 @@
 use core::mem;
 
 use aya_ebpf::{bindings::xdp_action, macros::{map, xdp}, programs::XdpContext};
-use aya_ebpf::helpers::bpf_xdp_adjust_tail;
 use aya_log_ebpf::info;
 use aya_ebpf::maps::array::Array;
 
@@ -65,31 +64,6 @@ fn try_adv_firewall(ctx: XdpContext) -> Result<u32, ()> {
                     {
                         return Ok(xdp_action::XDP_DROP);
                     }
-                    //Check payload
-                    // let data : *const [u8;8] = ptr_at(&ctx, EthHdr::LEN+Ipv4Hdr::LEN+TcpHdr::LEN)?;
-                    // let dataa = unsafe { *data };
-                    // for i in 0..8
-                    // {
-                    //     info!(&ctx, "Data: {}", dataa[i]);
-                    // }
-                    // let len = EthHdr::LEN + Ipv4Hdr::LEN + TcpHdr::LEN;
-                    // //Drop just the payload
-                    // unsafe {
-                    //     if bpf_xdp_adjust_tail(ctx.ctx, -(len as i32)) < 0
-                    //     {
-                    //         info!(&ctx,"Failed to drop payload");
-                    //         return Err(());
-                    //     }
-                    // }
-
-                    //Update checksum of TCP header and IP header because we dropped the payload
-                    /*
-                    How checksum is calculated:
-                    The checksum field in the TCP header is set to zero.
-                    The binary values of the source and destination IP addresses:32, the reserved field:16, the protocol field:8 (set to 6 for TCP), the TCP length, and the TCP data are concatenated.
-                    The resulting binary value is treated as a large integer and a bit-wise ones complement is taken.
-                    The resulting value is then converted to 16-bit binary and placed in the checksum field of the TCP header.
-                     */
                     
                 },
                 17 => {

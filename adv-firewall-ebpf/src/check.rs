@@ -20,7 +20,6 @@ pub fn check_config(
     {
         if let Some(entry) = BLACKLIST.get(i)
         {
-            info!(ctx, "Checking entry {}", i);
             let mut flag = false;
             if let Some(src_macc) = entry.src_mac
             {
