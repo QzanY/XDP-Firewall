@@ -1,6 +1,6 @@
 # adv-firewall
 A simple eBPF XDP firewall project for Linux.\
-You can add rules to or remove rules from the blacklist.\
+You can add rules to or remove rules from the blacklist.
 
 ## Prerequisites
 
@@ -46,8 +46,8 @@ srcip: The source of IP address of the packet.\
 dstip: The destination IP address of the packet.\
 protocol: The L4 protocol of the packet. Currently only TCP,UDP and ICMP protocols are supported.\
 srcport: The source port of the packet.\
-dstport: The destination port of the packet.\
+dstport: The destination port of the packet.
 
 ### Removing Rule
 #### DEL-index
-index: The index of the rule on the array of rules. Check Window.add_rule function for how indexing works.\
+index: The index of the rule on the array of rules. Check Window.add_rule function for how indexing works.
