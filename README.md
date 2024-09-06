@@ -16,6 +16,11 @@ The code of the GUI is in the app.py file.
 
 ## Run
 
+Before you run the code, you need to spesify the network interface you want to attach the program to.\
+To do that you need to change the code on adv-firewall/src/main.rs line 17.
+You need to write your interface instead of "enp0s10".
+To check your network interfaces, you can run `ifconfig` on your terminal.
+
 You can run the firewall with: 
 ```bash
 ./run.sh
