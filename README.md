@@ -43,7 +43,7 @@ The user-space program listens for incoming instructions on 127.0.0.1:8080. When
 The message format is as follows:
 ### Adding Rule
 #### ADD-index-srcmac-dstmac-ethertype-srcip-dstip-protocol-srcport-dstport
-index: The index of the rule on the array of rules or None. Check Windox.add_rule function for how indexing works.\
+index: The index of the rule on the array of rules. Check Windox.add_rule function for how indexing works.\
 srcmac: The source MAC address of the packet or None.\
 dstmac: The destination MAC address of the packet or None.\
 ethertype: The etherType of the packet or None. Currently you can only write IPV4 and IPV6 protocols. Other protocols are not supported.\
