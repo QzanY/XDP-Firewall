@@ -1,4 +1,4 @@
-# adv-firewall
+# XDP-Firewall
 A simple eBPF XDP firewall project for Linux.\
 You can add rules to or remove rules from the blacklist.
 
