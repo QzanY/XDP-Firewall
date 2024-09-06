@@ -43,15 +43,15 @@ The user-space program listens for incoming instructions on 127.0.0.1:8080. When
 The message format is as follows:
 ### Adding Rule
 #### ADD-index-srcmac-dstmac-ethertype-srcip-dstip-protocol-srcport-dstport
-index: The index of the rule on the array of rules. Check Windox.add_rule function for how indexing works.\
-srcmac: The source MAC address of the packet.\
-dstmac: The destination MAC address of the packet.\
-ethertype: The etherType of the packet. Currently you can only write IPV4 and IPV6 protocols. Other protocols are not supported.\
-srcip: The source of IP address of the packet.\
-dstip: The destination IP address of the packet.\
-protocol: The L4 protocol of the packet. Currently only TCP,UDP and ICMP protocols are supported.\
-srcport: The source port of the packet.\
-dstport: The destination port of the packet.
+index: The index of the rule on the array of rules or None. Check Windox.add_rule function for how indexing works.\
+srcmac: The source MAC address of the packet or None.\
+dstmac: The destination MAC address of the packet or None.\
+ethertype: The etherType of the packet or None. Currently you can only write IPV4 and IPV6 protocols. Other protocols are not supported.\
+srcip: The source of IP address of the packet or None.\
+dstip: The destination IP address of the packet or None.\
+protocol: The L4 protocol of the packet or None. Currently only TCP,UDP and ICMP protocols are supported.\
+srcport: The source port of the packet or None.\
+dstport: The destination port of the packet or None.
 
 ### Removing Rule
 #### DEL-index
