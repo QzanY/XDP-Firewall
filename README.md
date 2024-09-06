@@ -37,17 +37,17 @@ If you want to remove a rule, just press the "Delete" button below the rule on t
 The user-space program listens for incoming instructions on 127.0.0.1:8080. When you add or remove a rule, the GUI application sends a message to 127.0.0.1:8080 with send_text_to_localhost function using Python's socket library.\ 
 The message format is as follows:
 ### Adding Rule
-#### ADD-<index>-srcmac-dstmac-ethertype-srcip-dstip-protocol-srcport-dstport
-index: The index of the rule on the array. Check Windox.add_rule function for how indexing works.
-srcmac: The source MAC address of the packet.
-dstmac: The destination MAC address of the packet.
-ethertype: The etherType of the packet. Currently you can only write IPV4 and IPV6 protocols. Other protocols are not supported.
-srcip: The source of IP address of the packet.
-dstip: The destination IP address of the packet.
-protocol: The L4 protocol of the packet. Currently only TCP,UDP and ICMP protocols are supported.
-srcport: The source port of the packet.
-dstport: The destination port of the packet.
+#### ADD-index-srcmac-dstmac-ethertype-srcip-dstip-protocol-srcport-dstport
+index: The index of the rule on the array of rules. Check Windox.add_rule function for how indexing works.\
+srcmac: The source MAC address of the packet.\
+dstmac: The destination MAC address of the packet.\
+ethertype: The etherType of the packet. Currently you can only write IPV4 and IPV6 protocols. Other protocols are not supported.\
+srcip: The source of IP address of the packet.\
+dstip: The destination IP address of the packet.\
+protocol: The L4 protocol of the packet. Currently only TCP,UDP and ICMP protocols are supported.\
+srcport: The source port of the packet.\
+dstport: The destination port of the packet.\
 
 ### Removing Rule
-#### DEL-<index>
-Here <index> represents the index of the rule on the array of Rules. Check 
+#### DEL-index
+index: The index of the rule on the array of rules. Check Window.add_rule function for how indexing works.\
